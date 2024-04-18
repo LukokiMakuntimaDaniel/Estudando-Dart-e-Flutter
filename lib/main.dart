@@ -18,22 +18,28 @@ class AppWidget extends StatelessWidget {
   }
 }
 
-
 class HomePage extends StatefulWidget {
-
   const HomePage({super.key});
   @override
   State<HomePage> createState() {
     return HomePageState();
   }
-
 }
 
-class HomePageState extends State<HomePage>{
-  
+class HomePageState extends State<HomePage> {
+  int contador=0;
   @override
   Widget build(BuildContext context) {
-    return const Center(child: Text('acalma-me'));
+    return Container(
+      child: Center(
+          child: GestureDetector(
+        child: Text('Contador: $contador'),
+        onTap: () {
+          setState(() {
+            contador++;
+          });
+        },
+      )),
+    );
   }
-
 }
