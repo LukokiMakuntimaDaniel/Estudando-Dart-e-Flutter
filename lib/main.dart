@@ -1,22 +1,39 @@
+// ignore_for_file: no_logic_in_create_state
+
 import 'package:flutter/material.dart';
 
 main() {
-  String title = "ola como vai";
-  runApp(AppWidget(title: title));
+  runApp(const AppWidget());
 }
 
 class AppWidget extends StatelessWidget {
-  final String title;
-
-  const AppWidget({super.key, required this.title});
+  const AppWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(primarySwatch: Colors.red),
-      home: Container(
-        child: Center(child: Text('Lukoki')),
-      ),
+      home: const HomePage(),
     );
   }
+}
+
+
+class HomePage extends StatefulWidget {
+
+  const HomePage({super.key});
+  @override
+  State<HomePage> createState() {
+    return HomePageState();
+  }
+
+}
+
+class HomePageState extends State<HomePage>{
+  
+  @override
+  Widget build(BuildContext context) {
+    return const Center(child: Text('acalma-me'));
+  }
+
 }
