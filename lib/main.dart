@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 main() {
-  String title ="ola como vai";
-  runApp(AppWidget(title:title));
+  String title = "ola como vai";
+  runApp(AppWidget(title: title));
 }
 
 class AppWidget extends StatelessWidget {
@@ -12,13 +12,11 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: Center(
-      child: Text(
-        title,
-        textDirection: TextDirection.ltr,
-        style: TextStyle(color: Colors.white, fontSize: 50),
+    return MaterialApp(
+      theme: ThemeData(primarySwatch: Colors.red),
+      home: Container(
+        child: Center(child: Text('Lukoki')),
       ),
-    ));
+    );
   }
 }
